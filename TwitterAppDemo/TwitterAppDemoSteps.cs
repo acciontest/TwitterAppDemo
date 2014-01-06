@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
+using System.Security.AccessControl;
 using AlteryxGalleryAPIWrapper;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
@@ -113,7 +114,7 @@ namespace TwitterAppDemo
             dynamic interfaceresp = JsonConvert.DeserializeObject(appinterface);
 
             //Construct the payload to be posted.
-            string header = String.Empty;
+           // string header = String.Empty;
           //  string payatbegin = String.Empty;
             string city = "";
             string Address = "";
@@ -210,19 +211,22 @@ namespace TwitterAppDemo
                     break;
                 }
             }
-            ////url + "/apps/jobs/" + jobId + "/output/"
-            //string getmetadata = Obj.GetOutputMetadata(jobid);
-            //dynamic metadataresp = JsonConvert.DeserializeObject(getmetadata);
+           // //url + "/apps/jobs/" + jobId + "/output/"
+           // string getmetadata = Obj.GetOutputMetadata(jobid);
+           // dynamic metadataresp = JsonConvert.DeserializeObject(getmetadata);
 
-            //// outputid = metadataresp[0]["id"];
-            //int count = metadataresp.Count;
-            //for (int j = 0; j <= count - 1; j++)
-            //{
-            //    outputid = metadataresp[j]["id"];
-            //}
+           // // outputid = metadataresp[0]["id"];
+           // int count = metadataresp.Count;
+           // for (int j = 0; j <= count - 1; j++)
+           // {
+           //     outputid = metadataresp[j]["id"];
+           // }
 
-            //string getjoboutput = Obj.GetJobOutput(jobid, outputid, "raw");
-            //string htmlresponse = getjoboutput;
+           // string getjoboutput = Obj.GetJobOutput(jobid, outputid, "pdf");
+           //// byte []convert= Convert.FromBase64String(getjoboutput);
+           // string htmlresponse = getjoboutput;
+           // HtmlDocument doc = new HtmlDocument();
+           // doc.LoadHtml(htmlresponse);
         }
     }
 }
