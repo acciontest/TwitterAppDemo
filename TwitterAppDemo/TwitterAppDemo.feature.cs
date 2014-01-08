@@ -76,8 +76,8 @@ namespace TwitterAppDemo
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("publish and run Twitter App")]
-        [NUnit.Framework.TestCaseAttribute("Twitter Tracker", "\"Find out what others are saying about your brand on Twitter\"", "alteryx", "166", null)]
-        [NUnit.Framework.TestCaseAttribute("Twitter Tracker", "\"Find out what others are saying about your brand on Twitter\"", "pitchinvasion", "23", null)]
+        [NUnit.Framework.TestCaseAttribute("Twitter Tracker", "\"Find out what others are saying about your brand on Twitter\"", "alteryx", "239", null)]
+        [NUnit.Framework.TestCaseAttribute("Twitter Tracker", "\"Find out what others are saying about your brand on Twitter\"", "pitchinvasion", "10", null)]
         public virtual void PublishAndRunTwitterApp(string app, string description, string searchTerm, string count, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("publish and run Twitter App", exampleTags);
@@ -88,7 +88,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
 testRunner.When(string.Format("I run the App \"{0}\" with the \"{1}\" use a twitter handle to search \"{2}\"", app, description, searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
-testRunner.Then(string.Format("I see the searched phase \"{0}\" has the count {1}", searchTerm, count), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then(string.Format("I see the searched phase \"{0}\" has atleast has a tweet {1}", searchTerm, count), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -196,10 +196,11 @@ namespace TwitterAppDemo
             }           
         }
 
-        
-        [Then(@"I see the searched phase (.*)has the count (.*)")]
-        public void ThenISeeTheSearchedPhaseHasTheCount(string searchterm, int tweetcount)
+
+        [Then(@"I see the searched phase ""(.*)"" has atleast has a tweet (.*)")]
+        public void ThenISeeTheSearchedPhaseHasAtleastHasATweet(string searchterm, int tweetcount)
         {
+       
             //check the output message to check the number of values parsed.
             for (int i = 1; i < messagecount - 1; i++)
             {
@@ -207,7 +208,16 @@ namespace TwitterAppDemo
                 if (toolid == 78)
                 {
                     string text = statusresp["messages"][i]["text"];
-                    StringAssert.Contains(tweetcount.ToString(),text);
+                    string term = text.TrimStart();
+                    string[] split = term.Split(new Char[] { ' ', ',', '.', ':', '\t' });
+                    string tweetnosplit="";
+                    if (split.Length > 0)
+                    {
+                         tweetnosplit = split[0];
+                    }
+                    int tweetno = Convert.ToInt32(tweetnosplit);
+                   // StringAssert.Contains(tweetcount.ToString(),tweetno);
+                    Assert.That(tweetno,Is.GreaterThanOrEqualTo(tweetcount));
                     break;
                 }
             }

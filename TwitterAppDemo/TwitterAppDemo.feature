@@ -11,12 +11,12 @@
 
 Scenario Outline: publish and run Twitter App
 When I run the App "<app>" with the "<description>" use a twitter handle to search "<Search term>"
-Then I see the searched phase "<Search term>" has the count <Count>
+Then I see the searched phase "<Search term>" has atleast has a tweet <Count>
 
 Examples: 
-| app             | description                                                 | Search term | Count |
-| Twitter Tracker | "Find out what others are saying about your brand on Twitter" | alteryx       |   166 |
-| Twitter Tracker | "Find out what others are saying about your brand on Twitter" |pitchinvasion       |   23 |
+| app             | description                                                   | Search term | Count |
+| Twitter Tracker | "Find out what others are saying about your brand on Twitter" | alteryx       |   239 |
+| Twitter Tracker | "Find out what others are saying about your brand on Twitter" |pitchinvasion       |   10 |
 
 
 
