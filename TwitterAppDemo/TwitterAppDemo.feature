@@ -4,7 +4,7 @@
 	 		 
  Background:
   Given alteryx running at" http://gallery.alteryx.com/"
-  And I am logged in using "deepak.manoharan@accionlabs.com" and "P@ssw0rd"
+  And I am logged in using "deepak.manoharan@outlook.com" and "P@ssw0rd"
   #And I publish the application "twitter tracker"
   #And I check if the application is "Valid"
 
